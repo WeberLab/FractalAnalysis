@@ -198,5 +198,5 @@ base_welch = base_welch[:,:,1:slice_num+1]
 base_welch[np.isnan(base_welch)] = 0
 
 ni_img = nib.nifti1.Nifti1Pair(base_welch, None, n1_header)
-hurst_name = base + "_Hurst" + ".nii.gz"
+hurst_name = base + "_WelchHurst_" + str(full_freq[min_ind]) + "_to_" + str(full_freq[min_ind]) + ".nii.gz"
 nib.save(ni_img, hurst_name)
