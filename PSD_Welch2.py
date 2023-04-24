@@ -113,14 +113,14 @@ avg = avg.astype(float)
 
 min_freq = float(min_freq)
 max_freq = float(max_freq)
-min_ind = np.where(full_freq<min_freq)[0][-1] + 1
-max_ind = np.where(full_freq>max_freq)[0][0] 
+min_ind = np.where(full_freq<min_freq)[0][-1] + 1 # equal to or just after
+max_ind = np.where(full_freq>max_freq)[0][0] - 1 # equal to or just after
 sel_freq=full_freq[min_ind:max_ind]
 sel_avg=avg[min_ind:max_ind]
 
 print("You selected a frequency range between ", min_freq, " and ", max_freq)
 print("The closest I can do is:")
-print("Min Frequency = ", full_freq[min_ind], " and Max Frequency = ", full_freq[max_ind-1])
+print("Min Frequency = ", full_freq[min_ind], " and Max Frequency = ", full_freq[max_ind])
 
 ##########################################################################################
 # plot full frequency PSD with frequency range linear regression
