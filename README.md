@@ -7,8 +7,16 @@ The following are the scrips written by Olivia Campbell at BCCHR from May 2020 -
 
 ## Files
 
-### 1. PSD.ipynb
+### 1. welch_freq_sel.py
+This is a correct welch script. I am keeping the other files for historical purposes. After selected the frequency range over which power law scaling holds, this script can be used to calculate the Hurst exponent. It takes four inputs: the fMRI file, minimum frequency, maximum frequency, and the output folder. It outputs a .png image of the PSD showing the full frequency range and selected frequency range, and a 3D .nii.gz file of the Hurst exponent calculated for every voxel. 
+
+### 2. PSD.ipynb
 This Jupyter notebook can be used to select the frequency over which power law scaling exists. It calculates the power spectra for every voxel of the fMRI BOLD image and averages them. It also allows you to change the frequency range that you want to visualize. It displays the average power spectral density (PSD) for the full frequency range and then the average PSD for the selected frequncy range. On the PSDs, the slope, or Beta, is displayed. The y-axis is log(power) and the x-axis is log(freq). There is a secondary x-axis above in freq in order to aid in frequency selection. 
 
-### 2. PSD_Welch.py
+### 3. PSD_Welch.py
 After selected the frequency range over which power law scaling holds, this script can be used to calculate the Hurst exponent. It takes five inputs: the fMRI file, minimum frequency, maximum frequency, a grey matter mask, and white matter mask. It outputs a .png image of the PSD showing the full frequency range and selected frequency range, a 3D .nii.gz file of the Hurst exponent calculated for every voxel, and the effect size between H in the grey matter and the white matter. 
+
+### 4. PSD_Welch2.py
+This was supposed to be a simplified and improved version over PSD_Welch.py. But now I see it has mistakes (frequency selection and output file)
+
+
